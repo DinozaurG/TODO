@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		F24EAE3C24A13B25006FEBFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24EAE3B24A13B25006FEBFA /* AppDelegate.swift */; };
 		F24EAE3E24A13B25006FEBFA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24EAE3D24A13B25006FEBFA /* SceneDelegate.swift */; };
-		F24EAE4024A13B25006FEBFA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24EAE3F24A13B25006FEBFA /* ViewController.swift */; };
+		F24EAE4024A13B25006FEBFA /* TodoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24EAE3F24A13B25006FEBFA /* TodoVC.swift */; };
 		F24EAE4324A13B25006FEBFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F24EAE4124A13B25006FEBFA /* Main.storyboard */; };
 		F24EAE4524A13B27006FEBFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F24EAE4424A13B27006FEBFA /* Assets.xcassets */; };
 		F24EAE4824A13B27006FEBFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F24EAE4624A13B27006FEBFA /* LaunchScreen.storyboard */; };
+		F24EAE5324A13EB0006FEBFA /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24EAE5224A13EB0006FEBFA /* TodoCell.swift */; };
+		F24EAE5524A144B3006FEBFA /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24EAE5424A144B3006FEBFA /* Todo.swift */; };
+		F24EAE5724A1453C006FEBFA /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24EAE5624A1453C006FEBFA /* APIError.swift */; };
+		F24EAE5A24A145B0006FEBFA /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24EAE5924A145B0006FEBFA /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F24EAE3824A13B25006FEBFA /* TODO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TODO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F24EAE3B24A13B25006FEBFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F24EAE3D24A13B25006FEBFA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F24EAE3F24A13B25006FEBFA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F24EAE3F24A13B25006FEBFA /* TodoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoVC.swift; sourceTree = "<group>"; };
 		F24EAE4224A13B25006FEBFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F24EAE4424A13B27006FEBFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F24EAE4724A13B27006FEBFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F24EAE4924A13B27006FEBFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F24EAE5224A13EB0006FEBFA /* TodoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCell.swift; sourceTree = "<group>"; };
+		F24EAE5424A144B3006FEBFA /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		F24EAE5624A1453C006FEBFA /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		F24EAE5924A145B0006FEBFA /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,51 @@
 		F24EAE3A24A13B25006FEBFA /* TODO */ = {
 			isa = PBXGroup;
 			children = (
+				F24EAE5824A1459C006FEBFA /* Service */,
+				F24EAE5124A13E6A006FEBFA /* Model */,
+				F24EAE5024A13E62006FEBFA /* View */,
+				F24EAE4F24A13E58006FEBFA /* Controller */,
 				F24EAE3B24A13B25006FEBFA /* AppDelegate.swift */,
 				F24EAE3D24A13B25006FEBFA /* SceneDelegate.swift */,
-				F24EAE3F24A13B25006FEBFA /* ViewController.swift */,
 				F24EAE4124A13B25006FEBFA /* Main.storyboard */,
 				F24EAE4424A13B27006FEBFA /* Assets.xcassets */,
 				F24EAE4624A13B27006FEBFA /* LaunchScreen.storyboard */,
 				F24EAE4924A13B27006FEBFA /* Info.plist */,
 			);
 			path = TODO;
+			sourceTree = "<group>";
+		};
+		F24EAE4F24A13E58006FEBFA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F24EAE3F24A13B25006FEBFA /* TodoVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F24EAE5024A13E62006FEBFA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F24EAE5224A13EB0006FEBFA /* TodoCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F24EAE5124A13E6A006FEBFA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F24EAE5424A144B3006FEBFA /* Todo.swift */,
+				F24EAE5624A1453C006FEBFA /* APIError.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F24EAE5824A1459C006FEBFA /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F24EAE5924A145B0006FEBFA /* NetworkService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +182,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F24EAE4024A13B25006FEBFA /* ViewController.swift in Sources */,
+				F24EAE4024A13B25006FEBFA /* TodoVC.swift in Sources */,
 				F24EAE3C24A13B25006FEBFA /* AppDelegate.swift in Sources */,
 				F24EAE3E24A13B25006FEBFA /* SceneDelegate.swift in Sources */,
+				F24EAE5324A13EB0006FEBFA /* TodoCell.swift in Sources */,
+				F24EAE5524A144B3006FEBFA /* Todo.swift in Sources */,
+				F24EAE5724A1453C006FEBFA /* APIError.swift in Sources */,
+				F24EAE5A24A145B0006FEBFA /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
