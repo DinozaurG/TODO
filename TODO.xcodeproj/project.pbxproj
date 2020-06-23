@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -64,7 +64,7 @@
 		F24EAE3A24A13B25006FEBFA /* TODO */ = {
 			isa = PBXGroup;
 			children = (
-				F24EAE5824A1459C006FEBFA /* Service */,
+				F24EAE5824A1459C006FEBFA /* Services */,
 				F24EAE5124A13E6A006FEBFA /* Model */,
 				F24EAE5024A13E62006FEBFA /* View */,
 				F24EAE4F24A13E58006FEBFA /* Controller */,
@@ -103,12 +103,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		F24EAE5824A1459C006FEBFA /* Service */ = {
+		F24EAE5824A1459C006FEBFA /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				F24EAE5924A145B0006FEBFA /* NetworkService.swift */,
 			);
-			path = Service;
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,7 +147,7 @@
 				};
 			};
 			buildConfigurationList = F24EAE3324A13B25006FEBFA /* Build configuration list for PBXProject "TODO" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 11.4";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (

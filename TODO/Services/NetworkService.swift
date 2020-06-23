@@ -7,7 +7,9 @@
 //
 
 import Foundation
-struct NetworkService {
+
+
+class NetworkService {
     static let shared = NetworkService()
     
     let URL_BASE = "http://localhost:3003"
@@ -18,7 +20,7 @@ struct NetworkService {
     func getTodos(onSuccess: @escaping (Todos) -> Void, onError: @escaping (String) -> Void) {
         let url = URL(string: "\(URL_BASE)")!
         
-        let task = session.dataTask(with: url) { (data, responce, error) in
+        let task = session.dataTask(with: url) { (data, response, error) in
             
             DispatchQueue.main.async {
                 if let error = error {
@@ -26,22 +28,25 @@ struct NetworkService {
                     return
                 }
                 
-                guard let data = data, let responce = responce as? HTTPURLResponse else {
-                    onError("Invalid data or responce")
+                guard let data = data, let response = response as? HTTPURLResponse else {
+                    onError("Invalid data or response")
                     return
                 }
+                
                 do {
-                    if responce.statusCode == 200 {
+                    if response.statusCode == 200 {
                         let items = try JSONDecoder().decode(Todos.self, from: data)
                         onSuccess(items)
                     } else {
                         let err = try JSONDecoder().decode(APIError.self, from: data)
                         onError(err.message)
                     }
-                } catch {
+                }
+                catch {
                     onError(error.localizedDescription)
                 }
             }
+            
         }
         task.resume()
     }
@@ -52,6 +57,7 @@ struct NetworkService {
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
         do {
             let body = try JSONEncoder().encode(todo)
             request.httpBody = body
@@ -64,12 +70,13 @@ struct NetworkService {
                         return
                     }
                     
-                    guard let data = data, let responce = response as? HTTPURLResponse else {
-                        onError("Invalid data or responce")
+                    guard let data = data, let response = response as? HTTPURLResponse else {
+                        onError("Invalid data or response")
                         return
                     }
+                    
                     do {
-                        if responce.statusCode == 200 {
+                        if response.statusCode == 200 {
                             let items = try JSONDecoder().decode(Todos.self, from: data)
                             onSuccess(items)
                         } else {
@@ -80,10 +87,14 @@ struct NetworkService {
                         onError(error.localizedDescription)
                     }
                 }
+                
+                
             }
             task.resume()
+            
         } catch {
             onError(error.localizedDescription)
         }
+        
     }
 }
